@@ -54,31 +54,31 @@ public class Grid : MonoBehaviour
         return grid[x, y];
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.blue;
-    //    Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 0));
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 0));
 
-    //    if (grid != null)
-    //    {
-    //        foreach (Node n in grid)
-    //        {
-    //            Gizmos.color = (n.walkable) ? Color.white : Color.red;
-    //            if (path != null)
-    //            {
-    //                if (path.Contains(n))
-    //                {
-    //                    Gizmos.color = Color.black;
-    //                }
-    //            }
-    //            else
-    //            {
-    //            }
-    //            Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+        if (grid != null)
+        {
+            foreach (Node n in grid)
+            {
+                Gizmos.color = (n.walkable) ? Color.white : Color.red;
+                if (path != null)
+                {
+                    if (path.Contains(n))
+                    {
+                        Gizmos.color = Color.black;
+                    }
+                }
+                else
+                {
+                }
+                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
 
-    //        }
-    //    }
-    //}
+            }
+        }
+    }
 
     public List<Node> GetNeighbors(Node node)
     {
